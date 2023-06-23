@@ -29,3 +29,7 @@ codegen/
 
 # Octave ssession info
 octave-workspace
+
+# Some of popular image file extensions
+*.png
+*.jpg
