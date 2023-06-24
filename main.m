@@ -11,7 +11,7 @@ function [output] = ideal_lowpass_filter(input,cutOffFrequency)
 
   %indices of values of vector_u that are greater than half of height
   I = find(vector_u>height/2);
-  %indices of values of vector_u that are greater than half of height
+  %indices of values of vector_u that are greater than half of width
   J = find(vector_v>width/2);
   vector_u(I) = vector_u(I) - height;
   vector_v(J) = vector_v(J) - width;
