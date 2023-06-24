@@ -20,7 +20,7 @@ function [output] = ideal_highpass_filter(input,cutOffFrequency)
 
   [V,U] = meshgrid(vector_v,vector_u);
   euclidean_distance = sqrt(U.^2 + V.^2);
-  filtering_mask = double(euclidean_distance > cutOffFrequency); % importan
+  filtering_mask = double(euclidean_distance > cutOffFrequency); % important
   convolution = filtering_mask.*input_ff2;
   output = real(ifft2(double(convolution)));
 end
