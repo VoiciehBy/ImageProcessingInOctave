@@ -1,4 +1,4 @@
-function [output] = ideal_lowpass_filter(input,cutOffFrequency)
+function [output] = ideal_highpass_filter(input,cutOffFrequency)
   [height, width, numberOfChannels] = size(input);
 
   if numberOfChannels > 1
@@ -20,7 +20,7 @@ function [output] = ideal_lowpass_filter(input,cutOffFrequency)
 
   [V,U] = meshgrid(vector_v,vector_u);
   euclidean_distance = sqrt(U.^2 + V.^2);
-  filtering_mask = double(euclidean_distance <= cutOffFrequency); % important
+  filtering_mask = double(euclidean_distance > cutOffFrequency); % importan
   convolution = filtering_mask.*input_ff2;
   output = real(ifft2(double(convolution)));
 end
