@@ -1,5 +1,9 @@
 function [output] = ideal_lowpass_filter(input,cutOffFrequency)
-  [height, width] = size(input);
+  [height, width, numberOfChannels] = size(input);
+
+  if numberOfChannels > 1
+    input = rgb2gray(input);
+  end
 
   input_ff2 = fft2(double(input));
 
