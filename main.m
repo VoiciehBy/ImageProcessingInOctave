@@ -17,7 +17,7 @@ function [output] = ideal_lowpass_filter(input,cutOffFrequency)
   vector_v(J) = vector_v(J) - width;
 
 
-  [U,V] = meshgrid(vector_u,vector_v);
+  [V,U] = meshgrid(vector_v,vector_u);
   euclidean_distance = sqrt(U.^2 + V.^2);
   filtering_mask = double(euclidean_distance <= cutOffFrequency);
   convolution = filtering_mask.*input_ff2;
