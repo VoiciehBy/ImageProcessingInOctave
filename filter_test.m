@@ -1,4 +1,4 @@
-function test()
+function filter_test()
     input = imread("[image_name].[image_extension]");
     subplot(1,3,1),imshow(input,[]);
 
@@ -8,4 +8,4 @@ function test()
     output = ideal_highpass_filter(input,30);
     subplot(1,3,3),imshow(output,[]);
 end
-test();
+filter_test();
