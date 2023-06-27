@@ -1,10 +1,11 @@
 function test()
     input = imread("[image_name].[image_extension]");
-    output = (ideal_lowpass_filter(input,30));
-    imshow(output,[]);
+    subplot(1,3,1),imshow(input,[]);
 
-    input = imread("[image_name].[image_extension]");
-    output = (ideal_lowpass_filter(input,30));
-    figure
-    imshow(output,[]);
+    output = ideal_lowpass_filter(input,30);
+    subplot(1,3,2),imshow(output,[]);
+
+    output = ideal_highpass_filter(input,30);
+    subplot(1,3,3),imshow(output,[]);
 end
+test();
